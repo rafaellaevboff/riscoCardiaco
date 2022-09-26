@@ -22,8 +22,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".intents.IdadeActivity">
-        </activity>
+        <activity android:name=".intents.IdadeActivity" />
+        <activity android:name=".intents.GeneroActivity" />
+        <activity android:name=".intents.PesoActivity" />
+        <activity android:name=".intents.AtividadeActivity" />
+        <activity android:name=".intents.FumanteActivity" />
+        <activity android:name=".intents.PressaoActivity" />
+        <activity android:name=".intents.DoencaFamiliaActivity" />
+        <activity android:name=".intents.ColesterolActivity" />
+        <activity android:name=".intents.FinalActivity" />
     </application>
 
 </manifest>

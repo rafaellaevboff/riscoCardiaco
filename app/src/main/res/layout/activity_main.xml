@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
-        android:backgroundTint="@color/corbotao"
+        android:backgroundTint="@color/teal_700"
         android:contentDescription="@string/botaoiniciaracessibilidade"
         android:text="@string/botaoiniciar"
         app:layout_constraintBottom_toBottomOf="parent"

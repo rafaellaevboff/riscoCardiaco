@@ -22,7 +22,7 @@
         android:id="@+id/radioGroupDoencaFamilia"
         android:layout_width="296dp"
         android:layout_height="366dp"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,11 +72,11 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:backgroundTint="@color/corbotao"
+        android:backgroundTint="@color/teal_700"
         android:contentDescription="@string/botaoproximoacessibilidade"
         android:text="@string/botaoproximo"
         app:layout_constraintBottom_toBottomOf="parent"
