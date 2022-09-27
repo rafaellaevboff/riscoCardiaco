@@ -7,7 +7,14 @@
     <string name="botaoiniciaracessibilidade">Botão para iniciar a avaliação</string>
     <string name="botaoproximo">Próximo</string>
     <string name="botaoproximoacessibilidade">Botão para ir para a próxima página após responder</string>
+
     <string name="tituloidade">Digite sua idade</string>
+    <string name="de10a20">10 a 20 anos</string>
+    <string name="de21a30">21 a 30 anos</string>
+    <string name="de31a40">31 a 40 anos</string>
+    <string name="de41a50">41 a 50 anos</string>
+    <string name="de51a60">51 a 60 anos</string>
+    <string name="acima61">Acima de 61 anos</string>
 
     <string name="titulogenero">Selecione seu gênero</string>
     <string name="fm40">Feminino c/ menos de 40 anos</string>
