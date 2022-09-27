@@ -14,6 +14,7 @@ class ColesterolActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_colesterol)
         binding = ActivityColesterolBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         var resultado: Int = 0
         var valores = this.intent.getIntegerArrayListExtra("ListaValores")
@@ -36,6 +37,7 @@ class ColesterolActivity : AppCompatActivity() {
             proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
             startActivity(proximaPagina)
         }
+
     }
 
 

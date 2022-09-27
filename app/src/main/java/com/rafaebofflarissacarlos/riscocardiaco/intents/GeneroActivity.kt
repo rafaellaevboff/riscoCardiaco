@@ -14,6 +14,7 @@ class GeneroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_genero)
         binding = ActivityGeneroBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         var resultado: Int = 0
         var valores = this.intent.getIntegerArrayListExtra("ListaValores")
