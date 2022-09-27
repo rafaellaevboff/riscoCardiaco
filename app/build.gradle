@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.rafaebofflarissacarlos.riscocardiaco"
-        minSdk 28
+        minSdk 31
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -28,6 +28,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled true
     }
 }
 
