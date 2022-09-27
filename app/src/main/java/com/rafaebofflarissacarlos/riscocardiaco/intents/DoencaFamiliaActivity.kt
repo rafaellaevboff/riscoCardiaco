@@ -2,11 +2,9 @@ package com.rafaebofflarissacarlos.riscocardiaco.intents
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.rafaebofflarissacarlos.riscocardiaco.R
-import com.rafaebofflarissacarlos.riscocardiaco.databinding.ActivityColesterolBinding
 import com.rafaebofflarissacarlos.riscocardiaco.databinding.ActivityDoencafamiliaBinding
 
 class DoencaFamiliaActivity : AppCompatActivity() {
@@ -17,13 +15,11 @@ class DoencaFamiliaActivity : AppCompatActivity() {
         binding = ActivityDoencafamiliaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var resultado: Int = 0
-        var valores = this.intent.getIntegerArrayListExtra("ListaValores")
+        var resultado = 0
+        val valores = this.intent.getIntegerArrayListExtra("ListaValores")
 
         binding.button.setOnClickListener {
-            var idRadio: Int = binding.radioGroupDoencaFamilia.checkedRadioButtonId
-
-            when(idRadio){
+            when(binding.radioGroupDoencaFamilia.checkedRadioButtonId){
                 R.id.radioButton1-> resultado = 1
                 R.id.radioButton2-> resultado = 2
                 R.id.radioButton3-> resultado = 3

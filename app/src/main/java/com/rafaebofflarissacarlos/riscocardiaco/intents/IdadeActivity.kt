@@ -2,7 +2,6 @@ package com.rafaebofflarissacarlos.riscocardiaco.intents
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.rafaebofflarissacarlos.riscocardiaco.R
@@ -16,13 +15,11 @@ class IdadeActivity : AppCompatActivity() {
         binding = ActivityIdadeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var valores = ArrayList<Int>()
-        var resultado: Int = 0
+        val valores = ArrayList<Int>()
+        var resultado = 0
 
         binding.button.setOnClickListener {
-            var idRadio: Int = binding.radioGroupIdade.checkedRadioButtonId
-
-            when(idRadio){
+            when(binding.radioGroupIdade.checkedRadioButtonId){
                 R.id.radioButton1-> resultado = 1
                 R.id.radioButton2-> resultado = 2
                 R.id.radioButton3-> resultado = 3
@@ -33,7 +30,7 @@ class IdadeActivity : AppCompatActivity() {
             }
             valores.add(resultado)
 
-            val proximaPagina = Intent(this, PressaoActivity::class.java)
+            val proximaPagina = Intent(this, GeneroActivity::class.java)
             proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
             startActivity(proximaPagina)
         }

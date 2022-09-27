@@ -16,13 +16,11 @@ class FumanteActivity : AppCompatActivity() {
         binding = ActivityFumanteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var resultado: Int = 0
-        var valores = this.intent.getIntegerArrayListExtra("ListaValores")
+        var resultado = 0
+        val valores = this.intent.getIntegerArrayListExtra("ListaValores")
 
         binding.button.setOnClickListener {
-            var idRadio: Int = binding.radioGroupFumante.checkedRadioButtonId
-
-            when(idRadio){
+            when(binding.radioGroupFumante.checkedRadioButtonId){
                 R.id.radioButton1-> resultado = 0
                 R.id.radioButton2-> resultado = 1
                 R.id.radioButton3-> resultado = 2

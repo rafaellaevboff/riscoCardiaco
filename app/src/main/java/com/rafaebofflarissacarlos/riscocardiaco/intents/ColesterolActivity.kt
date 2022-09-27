@@ -16,13 +16,11 @@ class ColesterolActivity : AppCompatActivity() {
         binding = ActivityColesterolBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var resultado: Int = 0
-        var valores = this.intent.getIntegerArrayListExtra("ListaValores")
+        var resultado = 0
+        val valores = this.intent.getIntegerArrayListExtra("ListaValores")
 
         binding.button.setOnClickListener {
-            var idRadio: Int = binding.radioGroupColesterol.checkedRadioButtonId
-
-            when(idRadio){
+            when(binding.radioGroupColesterol.checkedRadioButtonId){
                 R.id.radioButton1-> resultado = 1
                 R.id.radioButton2-> resultado = 2
                 R.id.radioButton3-> resultado = 3

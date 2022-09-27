@@ -16,13 +16,11 @@ class GeneroActivity : AppCompatActivity() {
         binding = ActivityGeneroBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var resultado: Int = 0
-        var valores = this.intent.getIntegerArrayListExtra("ListaValores")
+        var resultado = 0
+        val valores = this.intent.getIntegerArrayListExtra("ListaValores")
 
         binding.button.setOnClickListener {
-            var idRadio: Int = binding.radioGroupGenero.checkedRadioButtonId
-
-            when(idRadio){
+            when(binding.radioGroupGenero.checkedRadioButtonId){
                 R.id.radioButton1-> resultado = 1
                 R.id.radioButton2-> resultado = 2
                 R.id.radioButton3-> resultado = 3
@@ -33,7 +31,7 @@ class GeneroActivity : AppCompatActivity() {
             }
             valores!!.add(resultado)
 
-            val proximaPagina = Intent(this, AtividadeActivity::class.java)
+            val proximaPagina = Intent(this, PesoActivity::class.java)
             proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
             startActivity(proximaPagina)
         }
