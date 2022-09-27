@@ -36,7 +36,6 @@ class DoencaFamiliaActivity : AppCompatActivity() {
             val proximaPagina = Intent(this, ColesterolActivity::class.java)
             proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
             startActivity(proximaPagina)
-
         }
     }
 }

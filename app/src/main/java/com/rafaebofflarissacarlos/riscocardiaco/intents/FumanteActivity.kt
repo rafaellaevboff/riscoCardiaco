@@ -33,11 +33,8 @@ class FumanteActivity : AppCompatActivity() {
             valores?.add(resultado)
 
             val proximaPagina = Intent(this, PressaoActivity::class.java)
-            startActivity(proximaPagina)
-
-            val enviarDados = Intent(this, ColesterolActivity::class.java)
             proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
-            startActivity(enviarDados)
+            startActivity(proximaPagina)
         }
     }
 }
