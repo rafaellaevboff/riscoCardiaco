@@ -36,10 +36,7 @@ class PressaoActivity   : AppCompatActivity() {
             valores?.add(resultado)
 
             val proximaPagina = Intent(this, DoencaFamiliaActivity::class.java)
-            startActivity(proximaPagina)
-
-            val enviarDados = Intent(this, PressaoActivity::class.java)
-            enviarDados.putExtra("PressaoResultado", resultado)
+            proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
             startActivity(proximaPagina)
         }
     }

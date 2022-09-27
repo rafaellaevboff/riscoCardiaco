@@ -36,10 +36,7 @@ class AtividadeActivity : AppCompatActivity() {
             valores?.add(resultado)
 
             val proximaPagina = Intent(this, FumanteActivity::class.java)
-            startActivity(proximaPagina)
-
-            val enviarDados = Intent(this, AtividadeActivity::class.java)
-            enviarDados.putExtra("AtividadeResultado", resultado)
+            proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
             startActivity(proximaPagina)
         }
     }

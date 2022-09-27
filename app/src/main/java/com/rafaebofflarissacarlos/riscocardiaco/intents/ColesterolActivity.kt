@@ -34,16 +34,21 @@ class ColesterolActivity : AppCompatActivity() {
             valores?.add(resultado)
 
             var riscoCardiaco: Int? = valores?.let { it1 -> calcularRiscoCardiaco(it1) }
+            println(riscoCardiaco)
 
             val proximaPagina = Intent(this, FinalActivity::class.java)
             proximaPagina.putExtra("RiscoCardiaco", riscoCardiaco)
             startActivity(proximaPagina)
-
         }
 
     }
 
     open fun calcularRiscoCardiaco(valores:ArrayList<Int>) : Int {
-
+        val iterator = valores.iterator()
+        var soma : Int = 0
+        while(iterator.hasNext()){
+            soma += iterator.next()
+        }
+        return soma
     }
 }
