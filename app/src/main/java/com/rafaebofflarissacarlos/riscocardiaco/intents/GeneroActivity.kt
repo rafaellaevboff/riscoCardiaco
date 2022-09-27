@@ -16,6 +16,7 @@ class GeneroActivity : AppCompatActivity() {
         binding = ActivityGeneroBinding.inflate(layoutInflater)
 
         var resultado: Int = 0
+        var valores = this.intent.getIntegerArrayListExtra("ListaValores")
 
         binding.button.setOnClickListener {
             var idRadio: Int = binding.radioGroupGenero.checkedRadioButtonId
@@ -29,13 +30,14 @@ class GeneroActivity : AppCompatActivity() {
                 R.id.radioButton6-> resultado = 7
                 else-> Toast.makeText(applicationContext, "É preciso selecionar uma opção.", Toast.LENGTH_LONG).show()
             }
+            valores?.add(resultado)
 
             val proximaPagina = Intent(this, AtividadeActivity::class.java)
             startActivity(proximaPagina)
 
             val enviarDados = Intent(this, ColesterolActivity::class.java)
-            enviarDados.putExtra("GeneroResultado", resultado)
-            startActivity(proximaPagina)
+            proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
+            startActivity(enviarDados)
         }
     }
 }

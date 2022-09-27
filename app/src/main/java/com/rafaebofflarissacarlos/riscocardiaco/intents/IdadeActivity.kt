@@ -2,6 +2,7 @@ package com.rafaebofflarissacarlos.riscocardiaco.intents
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.rafaebofflarissacarlos.riscocardiaco.R
@@ -15,6 +16,7 @@ class IdadeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_idade)
         binding = ActivityIdadeBinding.inflate(layoutInflater)
 
+        var valores = ArrayList<Int>()
         var resultado: Int = 0
 
         binding.button.setOnClickListener {
@@ -29,12 +31,10 @@ class IdadeActivity : AppCompatActivity() {
                 R.id.radioButton6-> resultado = 10
                 else-> Toast.makeText(applicationContext, "É preciso selecionar uma opção.", Toast.LENGTH_LONG).show()
             }
+            valores.add(resultado)
 
             val proximaPagina = Intent(this, PressaoActivity::class.java)
-            startActivity(proximaPagina)
-
-            val enviarDados = Intent(this, ColesterolActivity::class.java)
-            enviarDados.putExtra("IdadeResultado", resultado)
+            proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
             startActivity(proximaPagina)
         }
     }

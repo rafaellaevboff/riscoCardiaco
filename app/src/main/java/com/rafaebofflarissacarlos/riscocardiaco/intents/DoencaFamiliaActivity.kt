@@ -17,6 +17,7 @@ class DoencaFamiliaActivity : AppCompatActivity() {
         binding = ActivityDoencafamiliaBinding.inflate(layoutInflater)
 
         var resultado: Int = 0
+        var valores = this.intent.getIntegerArrayListExtra("ListaValores")
 
         binding.button.setOnClickListener {
             var idRadio: Int = binding.radioGroupDoencaFamilia.checkedRadioButtonId
@@ -30,9 +31,10 @@ class DoencaFamiliaActivity : AppCompatActivity() {
                 R.id.radioButton6-> resultado = 10
                 else-> Toast.makeText(applicationContext, "É preciso selecionar uma opção.", Toast.LENGTH_LONG).show()
             }
+            valores?.add(resultado)
 
             val proximaPagina = Intent(this, ColesterolActivity::class.java)
-            proximaPagina.putExtra("DoencaResultado", resultado)
+            proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
             startActivity(proximaPagina)
 
         }

@@ -16,6 +16,7 @@ class FumanteActivity : AppCompatActivity() {
         binding = ActivityFumanteBinding.inflate(layoutInflater)
 
         var resultado: Int = 0
+        var valores = this.intent.getIntegerArrayListExtra("ListaValores")
 
         binding.button.setOnClickListener {
             var idRadio: Int = binding.radioGroupFumante.checkedRadioButtonId
@@ -29,13 +30,14 @@ class FumanteActivity : AppCompatActivity() {
                 R.id.radioButton6-> resultado = 10
                 else-> Toast.makeText(applicationContext, "É preciso selecionar uma opção.", Toast.LENGTH_LONG).show()
             }
+            valores?.add(resultado)
 
             val proximaPagina = Intent(this, PressaoActivity::class.java)
             startActivity(proximaPagina)
 
             val enviarDados = Intent(this, ColesterolActivity::class.java)
-            enviarDados.putExtra("FumanteResultado", resultado)
-            startActivity(proximaPagina)
+            proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
+            startActivity(enviarDados)
         }
     }
 }
