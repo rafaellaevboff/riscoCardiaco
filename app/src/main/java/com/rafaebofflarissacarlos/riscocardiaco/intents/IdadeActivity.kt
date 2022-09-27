@@ -13,7 +13,6 @@ class IdadeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_idade)
         binding = ActivityIdadeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

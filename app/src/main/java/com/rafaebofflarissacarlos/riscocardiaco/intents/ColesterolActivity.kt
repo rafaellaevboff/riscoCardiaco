@@ -31,24 +31,14 @@ class ColesterolActivity : AppCompatActivity() {
                 R.id.radioButton6-> resultado = 7
                 else-> Toast.makeText(applicationContext, "É preciso selecionar uma opção.", Toast.LENGTH_LONG).show()
             }
-            valores?.add(resultado)
-
-            var riscoCardiaco: Int? = valores?.let { it1 -> calcularRiscoCardiaco(it1) }
-            println(riscoCardiaco)
+            valores!!.add(resultado)
 
             val proximaPagina = Intent(this, FinalActivity::class.java)
-            proximaPagina.putExtra("RiscoCardiaco", riscoCardiaco)
+            proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
             startActivity(proximaPagina)
         }
 
     }
 
-    open fun calcularRiscoCardiaco(valores:ArrayList<Int>) : Int {
-        val iterator = valores.iterator()
-        var soma : Int = 0
-        while(iterator.hasNext()){
-            soma += iterator.next()
-        }
-        return soma
-    }
+
 }
