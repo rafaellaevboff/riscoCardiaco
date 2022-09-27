@@ -65,4 +65,10 @@
     <string name="de256a280">De 256 a 280 ou a dieta contém 40% de gorduras animais</string>
     <string name="mais281">Acima de 281 ou a dieta contém 50% de gorduras animais</string>
 
+    <string name="pontuacao">Sua pontuação foi:</string>
+    <string name="risco">Seu risco é:</string>
+    <string name="inicio">Voltar para o início</string>
+    <string name="compartilhar">Compartilhar resultado</string>
+    <string name="aviso">Esta avaliação não substitui uma consulta médica!</string>
+
 </resources>
