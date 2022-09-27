@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.button.setOnClickListener {
             val trocarTela = Intent(this, IdadeActivity::class.java)

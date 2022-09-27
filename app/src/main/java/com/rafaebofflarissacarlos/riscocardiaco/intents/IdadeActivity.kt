@@ -15,6 +15,7 @@ class IdadeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_idade)
         binding = ActivityIdadeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         var valores = ArrayList<Int>()
         var resultado: Int = 0

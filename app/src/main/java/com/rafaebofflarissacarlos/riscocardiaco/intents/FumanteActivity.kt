@@ -14,6 +14,7 @@ class FumanteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fumante)
         binding = ActivityFumanteBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         var resultado: Int = 0
         var valores = this.intent.getIntegerArrayListExtra("ListaValores")

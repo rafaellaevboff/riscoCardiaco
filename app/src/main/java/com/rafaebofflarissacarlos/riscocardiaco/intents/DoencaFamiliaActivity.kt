@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.rafaebofflarissacarlos.riscocardiaco.R
+import com.rafaebofflarissacarlos.riscocardiaco.databinding.ActivityColesterolBinding
 import com.rafaebofflarissacarlos.riscocardiaco.databinding.ActivityDoencafamiliaBinding
 
 class DoencaFamiliaActivity : AppCompatActivity() {
@@ -15,6 +16,7 @@ class DoencaFamiliaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fumante)
         binding = ActivityDoencafamiliaBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         var resultado: Int = 0
         var valores = this.intent.getIntegerArrayListExtra("ListaValores")
