@@ -31,7 +31,7 @@ class PesoActivity : AppCompatActivity() {
                 R.id.radioButton6-> resultado = 7
                 else-> Toast.makeText(applicationContext, "É preciso selecionar uma opção.", Toast.LENGTH_LONG).show()
             }
-            valores?.add(resultado)
+            valores!!.add(resultado)
 
             val proximaPagina = Intent(this, AtividadeActivity::class.java)
             proximaPagina.putIntegerArrayListExtra("ListaValores", valores)

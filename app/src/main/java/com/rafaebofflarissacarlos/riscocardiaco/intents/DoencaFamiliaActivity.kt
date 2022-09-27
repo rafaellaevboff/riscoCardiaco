@@ -13,8 +13,8 @@ class DoencaFamiliaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fumante)
         binding = ActivityDoencafamiliaBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         var resultado: Int = 0
         var valores = this.intent.getIntegerArrayListExtra("ListaValores")
@@ -31,7 +31,7 @@ class DoencaFamiliaActivity : AppCompatActivity() {
                 R.id.radioButton6-> resultado = 10
                 else-> Toast.makeText(applicationContext, "É preciso selecionar uma opção.", Toast.LENGTH_LONG).show()
             }
-            valores?.add(resultado)
+            valores!!.add(resultado)
 
             val proximaPagina = Intent(this, ColesterolActivity::class.java)
             proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
