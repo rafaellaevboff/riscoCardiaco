@@ -73,7 +73,12 @@
     <string name="mais281">Acima de 281 ou a dieta contém 50% de gorduras animais</string>
 
     <string name="pontuacao">Sua pontuação foi:</string>
-    <string name="risco">Seu risco é:</string>
+    <string name="semrisco">Seu risco é: sem risco</string>
+    <string name="abaixomedia">Seu risco é: abaixo da média</string>
+    <string name="medio">Seu risco é: médio</string>
+    <string name="moderado">Seu risco é: moderado</string>
+    <string name="alto">Seu risco é: alto</string>
+    <string name="muitoalto">Seu risco é: muito alto</string>
     <string name="inicio">Voltar para o início</string>
     <string name="compartilhar">Compartilhar resultado</string>
     <string name="aviso">Esta avaliação não substitui uma consulta médica!</string>
