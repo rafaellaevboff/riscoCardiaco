@@ -28,42 +28,42 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/radioButton1"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/fm40"
             android:textSize="14sp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/f40a50"
             android:textSize="14sp" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/f50"
             android:textSize="14sp" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButton4"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/m"
             android:textSize="14sp" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButton5"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/mbe"
             android:textSize="14sp" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioButton6"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/mbec"
