@@ -20,7 +20,8 @@ class AtividadeActivity : AppCompatActivity() {
         val valores = this.intent.getIntegerArrayListExtra("ListaValores")
 
         binding.button.setOnClickListener {
-            when(binding.radioGroupAtividade.checkedRadioButtonId){
+            val idRadio = binding.radioGroupAtividade.checkedRadioButtonId
+            when(idRadio){
                 R.id.radioButton1-> resultado = 1
                 R.id.radioButton2-> resultado = 2
                 R.id.radioButton3-> resultado = 3
@@ -31,9 +32,11 @@ class AtividadeActivity : AppCompatActivity() {
             }
             valores!!.add(resultado)
 
-            val proximaPagina = Intent(this, FumanteActivity::class.java)
-            proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
-            startActivity(proximaPagina)
+            if(idRadio != -1) {
+                val proximaPagina = Intent(this, FumanteActivity::class.java)
+                proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
+                startActivity(proximaPagina)
+            }
         }
     }
 }

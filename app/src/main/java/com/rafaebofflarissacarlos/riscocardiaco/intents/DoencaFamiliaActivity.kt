@@ -19,7 +19,8 @@ class DoencaFamiliaActivity : AppCompatActivity() {
         val valores = this.intent.getIntegerArrayListExtra("ListaValores")
 
         binding.button.setOnClickListener {
-            when(binding.radioGroupDoencaFamilia.checkedRadioButtonId){
+            val idRadio = binding.radioGroupDoencaFamilia.checkedRadioButtonId
+            when(idRadio){
                 R.id.radioButton1-> resultado = 1
                 R.id.radioButton2-> resultado = 2
                 R.id.radioButton3-> resultado = 3
@@ -30,9 +31,11 @@ class DoencaFamiliaActivity : AppCompatActivity() {
             }
             valores!!.add(resultado)
 
-            val proximaPagina = Intent(this, ColesterolActivity::class.java)
-            proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
-            startActivity(proximaPagina)
+            if(idRadio != -1) {
+                val proximaPagina = Intent(this, ColesterolActivity::class.java)
+                proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
+                startActivity(proximaPagina)
+            }
         }
     }
 }

@@ -19,7 +19,8 @@ class IdadeActivity : AppCompatActivity() {
         var resultado = 0
 
         binding.button.setOnClickListener {
-            when(binding.radioGroupIdade.checkedRadioButtonId){
+            val idRadio = binding.radioGroupIdade.checkedRadioButtonId
+            when(idRadio){
                 R.id.radioButton1-> resultado = 1
                 R.id.radioButton2-> resultado = 2
                 R.id.radioButton3-> resultado = 3
@@ -30,9 +31,11 @@ class IdadeActivity : AppCompatActivity() {
             }
             valores.add(resultado)
 
-            val proximaPagina = Intent(this, GeneroActivity::class.java)
-            proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
-            startActivity(proximaPagina)
+            if(idRadio != -1) {
+                val proximaPagina = Intent(this, GeneroActivity::class.java)
+                proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
+                startActivity(proximaPagina)
+            }
         }
     }
 }

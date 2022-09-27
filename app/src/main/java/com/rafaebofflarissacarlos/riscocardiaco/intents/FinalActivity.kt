@@ -23,12 +23,12 @@ open class FinalActivity : AppCompatActivity() {
         binding.textoPontuacao.text = "Sua pontuação foi: $riscoCardiaco"
 
         when(riscoCardiaco){
-        in 6..11-> binding.risco.text= "@string/semrisco"
-        in 12..17-> binding.risco.text= "@string/abaixomedia"
-        in 18..24-> binding.risco.text= "@string/medio"
-        in 25..31-> binding.risco.text= "Moderado"
-        in 32..40-> binding.risco.text= "Alto"
-        in 41..62-> binding.risco.text= "Muito alto"
+        in 6..11-> binding.risco.text= "Seu risco: sem risco"
+        in 12..17-> binding.risco.text= "Seu risco: abaixo da média"
+        in 18..24-> binding.risco.text= "Seu risco: médio"
+        in 25..31-> binding.risco.text= "Seu risco: moderado"
+        in 32..40-> binding.risco.text= "Seu risco: alto"
+        in 41..62-> binding.risco.text= "Seu risco: muito alto"
         else-> Toast.makeText(applicationContext, "Ops, a aplicação bugou :(.", Toast.LENGTH_LONG).show()
         }
 
@@ -39,7 +39,7 @@ open class FinalActivity : AppCompatActivity() {
 
         binding.buttonshare.setOnClickListener {
             val  sendIntent = Intent(Intent.ACTION_SEND)
-            val texto = "Olá! Fiz meu teste de risco cardíaco. Meu resultado foi ${binding.risco.text}."
+            val texto = "Olá! Fiz meu teste de risco cardíaco. Meu resultado foi ${riscoCardiaco}."
             sendIntent.putExtra(Intent.EXTRA_TEXT, texto)
             sendIntent.type = "text/plain"
             startActivity(sendIntent)

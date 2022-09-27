@@ -20,20 +20,27 @@ class FumanteActivity : AppCompatActivity() {
         val valores = this.intent.getIntegerArrayListExtra("ListaValores")
 
         binding.button.setOnClickListener {
-            when(binding.radioGroupFumante.checkedRadioButtonId){
-                R.id.radioButton1-> resultado = 0
-                R.id.radioButton2-> resultado = 1
-                R.id.radioButton3-> resultado = 2
-                R.id.radioButton4-> resultado = 4
-                R.id.radioButton5-> resultado = 6
-                R.id.radioButton6-> resultado = 10
-                else-> Toast.makeText(applicationContext, "É preciso selecionar uma opção.", Toast.LENGTH_LONG).show()
+            val idRadio = binding.radioGroupFumante.checkedRadioButtonId
+            when (idRadio) {
+                R.id.radioButton1 -> resultado = 0
+                R.id.radioButton2 -> resultado = 1
+                R.id.radioButton3 -> resultado = 2
+                R.id.radioButton4 -> resultado = 4
+                R.id.radioButton5 -> resultado = 6
+                R.id.radioButton6 -> resultado = 10
+                else -> Toast.makeText(
+                    applicationContext,
+                    "É preciso selecionar uma opção.",
+                    Toast.LENGTH_LONG
+                ).show()
             }
             valores!!.add(resultado)
 
-            val proximaPagina = Intent(this, PressaoActivity::class.java)
-            proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
-            startActivity(proximaPagina)
+            if (idRadio != -1) {
+                val proximaPagina = Intent(this, PressaoActivity::class.java)
+                proximaPagina.putIntegerArrayListExtra("ListaValores", valores)
+                startActivity(proximaPagina)
+            }
         }
     }
 }
