@@ -2,23 +2,40 @@ package com.rafaebofflarissacarlos.riscocardiaco.intents
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.rafaebofflarissacarlos.riscocardiaco.R
+import com.rafaebofflarissacarlos.riscocardiaco.databinding.ActivityIdadeBinding
 
 class IdadeActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityIdadeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_idade)
+        binding = ActivityIdadeBinding.inflate(layoutInflater)
 
-        var unidade = findViewById<EditText>(R.id.editTextNumber)
+        var resultado: Int = 0
 
-        var button = findViewById<Button>(R.id.button)
-        button.setOnClickListener{
-            val intent = Intent(applicationContext, GeneroActivity::class.java)
+        binding.button.setOnClickListener {
+            var idRadio: Int = binding.radioGroupIdade.checkedRadioButtonId
 
-            startActivity(intent)
+            when(idRadio){
+                R.id.radioButton1-> resultado = 0
+                R.id.radioButton2-> resultado = 1
+                R.id.radioButton3-> resultado = 2
+                R.id.radioButton4-> resultado = 4
+                R.id.radioButton5-> resultado = 6
+                R.id.radioButton6-> resultado = 10
+                else-> Toast.makeText(applicationContext, "É preciso selecionar uma opção.", Toast.LENGTH_LONG).show()
+            }
+
+            val proximaPagina = Intent(this, PressaoActivity::class.java)
+            startActivity(proximaPagina)
+
+            val enviarDados = Intent(this, ColesterolActivity::class.java)
+            enviarDados.putExtra("IdadeResultado", resultado)
+            startActivity(proximaPagina)
         }
     }
 }
