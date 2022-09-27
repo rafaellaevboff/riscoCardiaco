@@ -2,12 +2,10 @@ package com.rafaebofflarissacarlos.riscocardiaco.intents
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.rafaebofflarissacarlos.riscocardiaco.R
 import com.rafaebofflarissacarlos.riscocardiaco.databinding.ActivityColesterolBinding
-import com.rafaebofflarissacarlos.riscocardiaco.databinding.ActivityFumanteBinding
 
 class ColesterolActivity : AppCompatActivity() {
     private lateinit var binding : ActivityColesterolBinding
@@ -18,6 +16,7 @@ class ColesterolActivity : AppCompatActivity() {
         binding = ActivityColesterolBinding.inflate(layoutInflater)
 
         var resultado: Int = 0
+        var valores = this.intent.getIntegerArrayListExtra("ListaValores")
 
         binding.button.setOnClickListener {
             var idRadio: Int = binding.radioGroupColesterol.checkedRadioButtonId
@@ -31,10 +30,18 @@ class ColesterolActivity : AppCompatActivity() {
                 R.id.radioButton6-> resultado = 10
                 else-> Toast.makeText(applicationContext, "É preciso selecionar uma opção.", Toast.LENGTH_LONG).show()
             }
+            valores?.add(resultado)
+
+            var riscoCardiaco: Int? = valores?.let { it1 -> calcularRiscoCardiaco(it1) }
 
             val proximaPagina = Intent(this, FinalActivity::class.java)
+            proximaPagina.putExtra("RiscoCardiaco", riscoCardiaco)
             startActivity(proximaPagina)
 
         }
+    }
+
+    open fun calcularRiscoCardiaco(valores:ArrayList<Int>) : Int {
+
     }
 }
