@@ -44,7 +44,6 @@ open class FinalActivity : AppCompatActivity() {
             sendIntent.type = "text/plain"
             startActivity(sendIntent)
         }
-
     }
 
     open fun calcularRiscoCardiaco(valores:ArrayList<Int>) : Int {
